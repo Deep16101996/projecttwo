@@ -2,7 +2,7 @@ import DeleteProduct from "@/lib/DeleteProduct";
 import Link from "next/link";
 
 const getProducts=async ()=>{
-    let data = await fetch("http://localhost:3000/products")
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`)
     data = await data.json();
     if(data.success){
         return data.result;
